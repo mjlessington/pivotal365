@@ -3,30 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pivotal365 — The Quiet Power Lifestyle Planner</title>
+  <title>Pivotal365 | Master the Art of the Quiet Pivot</title>
   <!-- Primary SEO -->
-  <meta name="description" content="A full-year lifestyle planner that coaches you through the exact moments you want to quit. Identity. Vision. Structure. Reflection. Start less. Finish more." />
+  <meta name="description" content="Pivotal365 is a year-long quiet pivot toward your best self, built on five stages: Identity, Vision, Structure, Adjustment and Reflection. Start with the Quiet Power Lifestyle Planner by Carlton Chapman." />
   <meta name="author" content="Carlton Chapman" />
   <meta name="robots" content="index, follow" />
   <meta name="keywords" content="lifestyle planner, productivity planner, goal setting planner, quiet power, identity planner, Carlton Chapman, Pivotal365, mindset planner, 2025 planner" />
   <link rel="canonical" href="https://pivotal365.com/" />
 
   <!-- Open Graph -->
-  <meta property="og:type" content="book" />
+  <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Pivotal365" />
-  <meta property="og:title" content="Pivotal365 — The Quiet Power Lifestyle Planner" />
+  <meta property="og:title" content="Pivotal365 | Master the Art of the Quiet Pivot" />
   <meta property="og:description" content="A 163-page lifestyle planner and psychological coaching system. Master the art of the quiet pivot — Identity, Vision, Structure, Reflection. Start less. Finish more." />
   <meta property="og:url" content="https://pivotal365.com/" />
   <meta property="og:image" content="https://pivotal365.com/public/bookCover.jpg" />
   <meta property="og:image:alt" content="Pivotal365: The Quiet Power Lifestyle Planner by Carlton Chapman" />
   <meta property="og:image:width" content="1159" />
   <meta property="og:locale" content="en_US" />
-  <meta property="book:author" content="Carlton Chapman" />
-  <meta property="book:isbn" content="B0GX2TFF6J" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Pivotal365 — The Quiet Power Lifestyle Planner" />
+  <meta name="twitter:title" content="Pivotal365 | Master the Art of the Quiet Pivot" />
   <meta name="twitter:description" content="A 163-page lifestyle planner and psychological coaching system. Identity. Vision. Structure. Reflection. Start less. Finish more." />
   <meta name="twitter:image" content="https://pivotal365.com/public/bookCover.jpg" />
   <meta name="twitter:image:alt" content="Pivotal365: The Quiet Power Lifestyle Planner by Carlton Chapman" />
@@ -854,6 +852,200 @@
       .marquee-track { animation: none; }
       .book { transform: none !important; }
     }
+
+    /* ─── v2: MOVEMENT LAYOUT ─────────────────────────────────── */
+
+    /* Hero dial: the five stages around a 365 core */
+    .dial { position: relative; width: min(100%, 460px); aspect-ratio: 1; margin: 0 auto; }
+    .dial-ring {
+      position: absolute; inset: 0; border-radius: 50%;
+      border: 1px solid rgba(242,185,31,.22);
+      box-shadow: inset 0 0 80px rgba(242,185,31,.06), 0 0 120px rgba(242,185,31,.08);
+    }
+    .dial-ring.r2 { inset: 13%; border-style: dashed; border-color: rgba(244,239,228,.12); animation: spin 90s linear infinite; }
+    .dial-ring.r3 { inset: 28%; border-color: rgba(143,180,214,.14); box-shadow: none; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .dial-core {
+      position: absolute; inset: 30%; border-radius: 50%;
+      display: grid; place-items: center; text-align: center;
+      background: radial-gradient(circle at 35% 30%, #1B2B45, var(--night) 70%);
+      border: 1px solid rgba(242,185,31,.35);
+      box-shadow: 0 0 60px rgba(242,185,31,.18), inset 0 0 30px rgba(0,0,0,.5);
+    }
+    .dial-core b { display: block; font-family: var(--display); font-weight: 600; font-size: clamp(44px, 6vw, 68px); line-height: 1; color: var(--gold); text-shadow: 0 0 40px rgba(242,185,31,.35); }
+    .dial-core small { display: block; margin-top: 6px; font-size: 10px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--text-dim); }
+    .dial-node {
+      position: absolute; left: var(--x); top: var(--y);
+      transform: translate(-50%, -50%);
+      width: 16px; height: 16px;
+    }
+    .dial-node span { position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%); }
+    .dial-node i {
+      display: block; width: 16px; height: 16px; border-radius: 50%;
+      background: var(--night); border: 2px solid rgba(244,239,228,.35);
+      transition: all .6s var(--ease);
+    }
+    .dial-node span {
+      font-family: var(--display); font-size: 14px; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--text-mute); padding: 4px 10px; border-radius: 999px;
+      background: rgba(7,13,24,.75); border: 1px solid var(--line-soft);
+      transition: all .6s var(--ease); white-space: nowrap;
+    }
+    .dial-node.on i { background: var(--gold); border-color: var(--gold); box-shadow: 0 0 0 6px rgba(242,185,31,.16), 0 0 24px var(--gold-glow); }
+    .dial-node.on span { color: var(--ink); background: var(--gold); border-color: var(--gold); }
+
+    /* Manifesto */
+    .manifesto { background: var(--night-2); border-block: 1px solid var(--line-soft); overflow: hidden; }
+    .manifesto-head { max-width: 760px; margin-bottom: 64px; }
+    .manifesto-head h2 { margin-bottom: 22px; }
+    .manifesto-head h2 .gold { color: var(--gold); }
+    .tenets { list-style: none; counter-reset: t; border-top: 1px solid var(--line); }
+    .tenet {
+      counter-increment: t;
+      display: grid; grid-template-columns: 90px 1fr 1.1fr; gap: 32px; align-items: baseline;
+      padding: 30px 0; border-bottom: 1px solid var(--line);
+      transition: background .4s;
+    }
+    .tenet::before {
+      content: counter(t, decimal-leading-zero);
+      font-family: var(--display); font-size: 15px; letter-spacing: .14em; color: var(--copper);
+    }
+    .tenet h3 { font-size: clamp(26px, 3.2vw, 40px); transition: color .4s, transform .4s var(--ease); }
+    .tenet p { color: var(--text-dim); font-size: 16.5px; }
+    .tenet:hover h3 { color: var(--gold); transform: translateX(8px); }
+
+    /* Ways in */
+    .ways-head { margin-bottom: 60px; }
+    .ways-head h2 { margin-bottom: 18px; }
+    .ways-head h2 .gold { color: var(--gold); }
+    .ways { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 18px; }
+    .way {
+      position: relative; display: flex; flex-direction: column;
+      padding: 34px 30px 30px; border-radius: 22px;
+      background: var(--night-2); border: 1px solid var(--line-soft);
+      transition: transform .4s var(--ease), border-color .4s;
+      overflow: hidden;
+    }
+    .way:hover { transform: translateY(-4px); border-color: rgba(244,239,228,.2); }
+    .way.primary {
+      grid-row: span 2;
+      background: linear-gradient(170deg, rgba(242,185,31,.14), rgba(242,185,31,.02) 55%), var(--night-3);
+      border-color: rgba(242,185,31,.45);
+    }
+    .way-status {
+      align-self: flex-start; margin-bottom: 22px;
+      font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+      padding: 6px 12px; border-radius: 999px;
+      color: var(--text-dim); border: 1px solid rgba(244,239,228,.2);
+    }
+    .way.primary .way-status { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+    .way-step { font-family: var(--display); font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: var(--copper); margin-bottom: 6px; }
+    .way h3 { font-size: 28px; margin-bottom: 12px; }
+    .way.primary h3 { font-size: clamp(32px, 3.4vw, 44px); }
+    .way p { color: var(--text-dim); font-size: 15.5px; flex: 1; }
+    .way-link { margin-top: 22px; font-weight: 600; font-size: 15px; color: var(--gold-soft); display: inline-flex; gap: 8px; align-items: center; }
+    .way-link:hover .arrow { transform: translateX(4px); }
+    .way-link .arrow { transition: transform .3s var(--ease); }
+    .way-book { margin: 8px 0 26px; display: flex; justify-content: center; perspective: 1000px; }
+    .way-book img {
+      width: 58%; max-width: 230px; border-radius: 3px 8px 8px 3px;
+      transform: rotateY(-16deg) rotateX(4deg);
+      box-shadow: 0 30px 60px -20px rgba(0,0,0,.8), 0 0 60px rgba(242,185,31,.18);
+      transition: transform .6s var(--ease);
+    }
+    .way.primary:hover .way-book img { transform: rotateY(-6deg) rotateX(2deg) translateY(-4px); }
+
+    /* Start here: the planner */
+    .start { background: linear-gradient(180deg, var(--night), var(--ink)); }
+    .start-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 80px; align-items: center; margin-bottom: 110px; }
+    .start-visual { position: relative; display: flex; justify-content: center; perspective: 1400px; }
+    .start-text h2 { margin-bottom: 26px; }
+    .start-text h2 .gold { color: var(--gold); }
+    .start-text > p { color: var(--text-dim); margin-bottom: 18px; font-size: 17.5px; }
+    .start-text .btn { margin-top: 18px; }
+    .sub-head { margin: 0 0 40px; }
+    .sub-head h3 { font-size: clamp(28px, 3.4vw, 40px); margin-bottom: 12px; }
+    .sub-head h3 .gold { color: var(--gold); }
+    .sub-head p { color: var(--text-dim); max-width: 600px; }
+    .center.sub-head p { margin: 0 auto; }
+    .vig-block { margin-top: 110px; }
+
+    /* Join */
+    .join {
+      background:
+        radial-gradient(700px 400px at 85% 20%, rgba(224,146,94,.12), transparent 60%),
+        var(--night-2);
+      border-block: 1px solid var(--line-soft);
+    }
+    .join-card {
+      display: grid; grid-template-columns: 1.1fr .9fr; gap: 60px; align-items: center;
+      padding: 64px; border-radius: 28px;
+      background: linear-gradient(135deg, rgba(242,185,31,.10), transparent 55%), var(--night-3);
+      border: 1px solid rgba(242,185,31,.3);
+      position: relative; overflow: hidden;
+    }
+    .join-card::after {
+      content: ''; position: absolute; width: 420px; height: 420px; right: -160px; bottom: -200px; border-radius: 50%;
+      border: 1px solid rgba(242,185,31,.15); box-shadow: 0 0 0 50px rgba(242,185,31,.03), 0 0 0 100px rgba(242,185,31,.02);
+      pointer-events: none;
+    }
+    .join h2 { font-size: clamp(32px, 4.2vw, 52px); margin-bottom: 18px; }
+    .join h2 .gold { color: var(--gold); }
+    .join p { color: var(--text-dim); }
+    .join-perks { list-style: none; margin-top: 22px; display: grid; gap: 10px; }
+    .join-perks li { display: flex; gap: 12px; color: var(--text-dim); font-size: 15.5px; }
+    .join-perks li::before { content: ''; flex-shrink: 0; margin-top: 9px; width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); }
+    .join-form { position: relative; z-index: 1; display: grid; gap: 12px; }
+    .join-form label { font-size: 13px; font-weight: 600; letter-spacing: .06em; color: var(--text-dim); }
+    .join-form input {
+      width: 100%; font: inherit; font-size: 16px; color: var(--text);
+      padding: 16px 20px; border-radius: 14px;
+      background: rgba(7,13,24,.7); border: 1px solid rgba(244,239,228,.2);
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .join-form input::placeholder { color: var(--text-mute); }
+    .join-form input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 4px rgba(242,185,31,.15); }
+    .join-form .btn { margin-top: 6px; }
+    .join-note { font-size: 13px; color: var(--text-mute); min-height: 20px; }
+    .join-note.ok { color: var(--gold-soft); }
+
+    @media (max-width: 1024px) {
+      .tenet { grid-template-columns: 60px 1fr; }
+      .tenet p { grid-column: 2; }
+      .ways { grid-template-columns: 1fr 1fr; }
+      .way.primary { grid-row: auto; grid-column: 1 / -1; }
+      .way.primary .way-inner { display: grid; grid-template-columns: 220px 1fr; gap: 36px; align-items: center; }
+      .way-book img { width: 100%; }
+    }
+    @media (max-width: 900px) {
+      .hero-visual { order: 0; }
+      .dial { width: min(100% - 80px, 340px); }
+      .start-grid, .join-card { grid-template-columns: 1fr; gap: 48px; }
+      .start-grid { margin-bottom: 80px; }
+      .vig-block { margin-top: 80px; }
+      .join-card { padding: 44px 32px; }
+    }
+    @media (max-width: 600px) {
+      .dial-node span { font-size: 11px; padding: 3px 8px; letter-spacing: .1em; }
+      .dial-node, .dial-node i { width: 12px; height: 12px; }
+      .tenet { grid-template-columns: 1fr; gap: 8px; padding: 24px 0; }
+      .tenet p { grid-column: auto; }
+      .ways { grid-template-columns: 1fr; }
+      .way.primary .way-inner { display: block; }
+      .way-book img { width: 58%; }
+      .join-card { padding: 36px 22px; border-radius: 22px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .dial-ring.r2 { animation: none; } }
+    .hero-entry { font-size: 15px; color: var(--text-mute); }
+    .hero-entry a { color: var(--gold-soft); border-bottom: 1px solid rgba(246,207,99,.4); transition: border-color .2s; }
+    .hero-entry a:hover { border-color: var(--gold-soft); }
+    .tile .tile-title { font-size: 26px; margin-bottom: 12px; }
+    .vig-title { font-size: clamp(32px, 4.4vw, 52px); margin-bottom: 26px; }
+    .vig-title .gold { color: var(--gold); }
+    .way.wide { grid-column: span 2; }
+    .start-visual .hero-badge { right: 4%; bottom: 10%; top: auto; }
+    @media (max-width: 1024px) { .way.wide { grid-column: 1 / -1; } }
+    @media (max-width: 600px) { .way.wide { grid-column: auto; } .start-visual .hero-badge { right: calc(50% - 160px); } }
   </style>
 </head>
 <body>
@@ -865,20 +1057,23 @@
     <nav class="nav-inner" aria-label="Main navigation">
       <a href="#" class="nav-logo" aria-label="Pivotal365, back to top">Pivotal<span aria-hidden="true">365</span></a>
       <ul class="nav-links">
-        <li><a href="#framework">Framework</a></li>
-        <li><a href="#inside">What's Inside</a></li>
-        <li><a href="#author">Author</a></li>
-        <li><a href="#get-the-planner" class="btn btn-gold">Get the Planner</a></li>
+        <li><a href="#philosophy">Philosophy</a></li>
+        <li><a href="#framework">The Path</a></li>
+        <li><a href="#start">The Planner</a></li>
+        <li><a href="#author">Carlton</a></li>
+        <li><a href="#start-your-pivot" class="btn btn-gold">Start Your Pivot</a></li>
       </ul>
       <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
     </nav>
     <div class="mobile-menu" id="mobile-menu">
-      <a href="#framework">Framework</a>
-      <a href="#inside">What's Inside</a>
-      <a href="#author">Author</a>
-      <a href="#get-the-planner" class="btn btn-gold btn-lg">Get the Planner</a>
+      <a href="#philosophy">Philosophy</a>
+      <a href="#framework">The Path</a>
+      <a href="#start">The Planner</a>
+      <a href="#author">Carlton</a>
+      <a href="#join">Join</a>
+      <a href="#start-your-pivot" class="btn btn-gold btn-lg">Start Your Pivot</a>
     </div>
   </header>
 
@@ -891,31 +1086,32 @@
 
     <div class="hero-inner">
       <div class="hero-text">
-        <p class="eyebrow reveal">Quiet Power Lifestyle Planner</p>
+        <p class="eyebrow reveal">Pivotal365 · Quiet Power</p>
         <h1 id="hero-title" class="reveal" style="--d:.08s">
           <span class="line"><span class="serif-i">Master</span> the art</span>
           <span class="line">of the <span class="gold">quiet</span></span>
           <span class="line gold">pivot.</span>
         </h1>
-        <p class="hero-sub reveal" style="--d:.16s">A full-year framework for the chronically ambitious, built to coach you through the exact moments you want to quit. Start less. Finish more.</p>
+        <p class="hero-sub reveal" style="--d:.16s">Pivotal365 is a year-long shift toward the person you keep saying you'll become. You start with who you are, choose fewer things, build a rhythm you can keep, and finish what you start.</p>
         <div class="hero-cta reveal" style="--d:.24s">
-          <a href="https://www.amazon.com/dp/B0GX2TFF6J" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-lg">Get the Planner <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens Amazon in new tab)</span></a>
-          <a href="#framework" class="btn btn-line btn-lg">See How It Works</a>
+          <a href="#start-your-pivot" class="btn btn-gold btn-lg">Start Your Pivot <span class="arrow" aria-hidden="true">→</span></a>
+          <a href="#philosophy" class="btn btn-line btn-lg">Read the Philosophy</a>
         </div>
-        <div class="hero-formats reveal" style="--d:.32s">
-          <div class="format-pill"><strong>$9.99</strong>Kindle</div>
-          <div class="format-pill"><strong>$14.99</strong>Paperback</div>
-          <div class="format-pill"><strong>$24.99</strong>Hardcover</div>
-        </div>
+        <p class="hero-entry reveal" style="--d:.32s">Step one: <a href="#start">the Quiet Power Lifestyle Planner</a>, from $9.99 on Amazon.</p>
       </div>
 
       <div class="hero-visual reveal" style="--d:.2s">
-        <div class="book" id="book">
-          <img src="public/bookCover.jpg" alt="Pivotal365: The Quiet Power Lifestyle Planner by Carlton Chapman" width="1159" height="1500" />
-          <div class="book-glare" aria-hidden="true"></div>
-          <div class="book-floor" aria-hidden="true"></div>
+        <div class="dial" id="dial" aria-hidden="true">
+          <div class="dial-ring"></div>
+          <div class="dial-ring r2"></div>
+          <div class="dial-ring r3"></div>
+          <div class="dial-core"><div><b>365</b><small>Days to your pivot</small></div></div>
+          <div class="dial-node on" style="--x:50%;--y:0%"><i></i><span>Identity</span></div>
+          <div class="dial-node" style="--x:97.55%;--y:34.55%"><i></i><span>Vision</span></div>
+          <div class="dial-node" style="--x:79.39%;--y:90.45%"><i></i><span>Structure</span></div>
+          <div class="dial-node" style="--x:20.61%;--y:90.45%"><i></i><span>Adjustment</span></div>
+          <div class="dial-node" style="--x:2.45%;--y:34.55%"><i></i><span>Reflection</span></div>
         </div>
-        <div class="hero-badge" aria-hidden="true"><div><b>365</b><small>Days of<br/>follow-through</small></div></div>
       </div>
     </div>
 
@@ -940,8 +1136,8 @@
       <p class="eyebrow reveal">You're not alone</p>
       <h2 id="problem-title" class="reveal">You have a graveyard of unfinished projects. <span class="dim">That's not a character flaw.</span></h2>
       <div class="copy reveal">
-        <p>It's an architecture problem. Most planners assume you're already emotionally regulated and ready to perform. They hand you blank boxes and wish you luck in the messy middle.</p>
-        <p>You've been blaming yourself. But the tool was never built for the moment you actually needed it.</p>
+        <p>It's an architecture problem. Most plans assume you're already emotionally regulated and ready to perform. They hand you blank boxes and wish you luck in the messy middle.</p>
+        <p>You've been blaming yourself. But the tools were never built for the moment you actually needed them.</p>
       </div>
 
       <div class="voices">
@@ -955,47 +1151,32 @@
     </div>
   </section>
 
-  <!-- WHAT IT IS -->
-  <section class="section what" aria-labelledby="what-title">
-    <div class="container what-grid">
-      <div class="what-text">
-        <p class="eyebrow reveal">The Pivotal365 Difference</p>
-        <h2 id="what-title" class="reveal">This is not a planner. It is a <span class="gold">framework for becoming.</span></h2>
-        <p class="reveal">Pivotal365 is a 163-page hybrid: part lifestyle planner, part psychological coaching system. It begins before the first date box, with identity, and it doesn't let you off the hook when things get hard.</p>
-        <p class="reveal">Embedded throughout the planning year are 10 Mini Chapters and 6 Vignettes: written interventions that meet you in the exact moments most people abandon everything.</p>
-
-        <div class="stats reveal">
-          <div class="stat"><b data-count="163">163</b><span>Pages</span></div>
-          <div class="stat"><b data-count="10">10</b><span>Mini Chapters</span></div>
-          <div class="stat"><b data-count="6">6</b><span>Vignettes</span></div>
-          <div class="stat"><b data-count="365">365</b><span>Days</span></div>
-        </div>
-
-        <ul class="highlights reveal">
-          <li><span>Starts with identity: who you're <em>becoming</em>, not just what you're <em>doing</em></span></li>
-          <li><span>10 Mini Chapters of embedded psychological coaching</span></li>
-          <li><span>6 personal Vignettes that normalize the emotional cost of ambition</span></li>
-          <li><span>Financial Clarity section, connecting your money to your mission</span></li>
-          <li><span>Full year: Yearly, Quarterly, Monthly, Weekly, Daily structure</span></li>
-          <li><span>End-of-year reflection: <em>Who You Became</em></span></li>
-        </ul>
+  <!-- PHILOSOPHY -->
+  <section class="section manifesto" id="philosophy" aria-labelledby="philosophy-title">
+    <div class="container">
+      <div class="manifesto-head">
+        <p class="eyebrow reveal">The Quiet Power Philosophy</p>
+        <h2 id="philosophy-title" class="reveal">Six ideas behind every <span class="gold">Pivotal365 day</span></h2>
+        <p class="lede reveal">They come from Carlton Chapman's own years of starting and stopping, and they're why the method keeps working after motivation runs out.</p>
       </div>
-
-      <figure class="quote-card reveal" style="--d:.1s">
-        <span class="mark" aria-hidden="true">&ldquo;</span>
-        <blockquote>Most planners assume you're ready. Pivotal365 meets you where you are, and refuses to let you quit.</blockquote>
-        <figcaption><cite>The Quiet Power Philosophy</cite></figcaption>
-      </figure>
+      <ol class="tenets">
+        <li class="tenet reveal"><h3>Identity before execution</h3><p>You can't out-execute a broken self-concept. The pivot starts with deciding who you are, then acting like it.</p></li>
+        <li class="tenet reveal"><h3>Start less. Finish more.</h3><p>Pick one through-line and let the rest wait. Focus is a choice you make again every week.</p></li>
+        <li class="tenet reveal"><h3>Discipline is self-respect</h3><p>Showing up is how you honor what you said mattered. Every day you follow through is a vote for the future you.</p></li>
+        <li class="tenet reveal"><h3>Growth requires subtraction</h3><p>No is the most useful word you have. Clearing space gives the important work room to grow.</p></li>
+        <li class="tenet reveal"><h3>Adjust, don't abandon</h3><p>Changing direction is allowed. Walking away from the journey is the only real failure.</p></li>
+        <li class="tenet reveal"><h3>Quiet consistency wins</h3><p>Small, unremarkable days add up to a change that big bursts of effort rarely reach.</p></li>
+      </ol>
     </div>
   </section>
 
-  <!-- ARCHITECTURE OF CHANGE -->
+  <!-- THE PATH -->
   <section class="section framework" id="framework" aria-labelledby="framework-title">
     <div class="container framework-grid">
       <div class="framework-head">
-        <p class="eyebrow reveal">Proprietary Framework</p>
+        <p class="eyebrow reveal">The Pivot Path</p>
         <h2 id="framework-title" class="reveal">The Architecture <span class="gold">of Change</span></h2>
-        <p class="lede reveal">Five sequential stages that don't just plan your year. They cure the habit of quitting.</p>
+        <p class="lede reveal">Five stages you move through in order, and come back to whenever life shifts. They're how a pivot sticks.</p>
         <div class="stage-dots reveal" id="stage-dots" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
       </div>
 
@@ -1003,7 +1184,6 @@
         <div class="stages-rail" aria-hidden="true"></div>
         <div class="stages-fill" id="stages-fill" aria-hidden="true"></div>
         <ol class="stage-list">
-
         <li class="stage reveal">
           <div class="stage-node" aria-hidden="true">01</div>
           <div class="stage-card">
@@ -1019,7 +1199,7 @@
             <div class="stage-label" aria-hidden="true">Stage Two</div>
             <h3>Vision <span class="sr-only">: Antidote to Shiny Object Syndrome</span></h3>
             <div class="stage-antidote" aria-hidden="true">Antidote to Shiny Object Syndrome</div>
-            <p>Not goal-setting, curation. Cultivating the quiet focus to commit to one through-line while the world floods your attention with every other possibility.</p>
+            <p>Curation over goal-setting. Cultivating the quiet focus to commit to one through-line while the world floods your attention with every other possibility.</p>
           </div>
         </li>
         <li class="stage reveal">
@@ -1054,20 +1234,97 @@
     </div>
   </section>
 
-  <!-- WHAT'S INSIDE -->
-  <section class="section inside" id="inside" aria-labelledby="inside-title">
+  <!-- WAYS IN -->
+  <section class="section ways-in" id="start-your-pivot" aria-labelledby="ways-title">
     <div class="container">
-      <div class="inside-head center">
-        <p class="eyebrow reveal">Inside the Planner</p>
-        <h2 id="inside-title" class="reveal"><span class="gold">163 pages</span> of quiet execution</h2>
-        <p class="lede reveal">Every section was designed with one question in mind: what does the person about to quit actually need right now?</p>
+      <div class="ways-head center">
+        <p class="eyebrow reveal">Your Way In</p>
+        <h2 id="ways-title" class="reveal">Start your pivot <span class="gold">today</span></h2>
+        <p class="lede reveal">The planner is step one. More ways to go deeper with Pivotal365 are on the way.</p>
       </div>
 
-      <div class="bento">
+      <div class="ways">
+        <article class="way primary reveal">
+          <span class="way-status">Available now</span>
+          <div class="way-inner">
+            <div class="way-book"><img src="public/bookCover.jpg" alt="" width="1159" height="1500" loading="lazy" /></div>
+            <div>
+              <div class="way-step">Step 01 · Start here</div>
+              <h3>The Quiet Power Lifestyle Planner</h3>
+              <p>163 pages that take you through all five stages over a full year, with coaching written into the margins for the moments you'd normally quit.</p>
+              <a href="#start" class="way-link">Explore the planner <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="way reveal" style="--d:.08s">
+          <span class="way-status">Coming soon</span>
+          <div class="way-step">Step 02</div>
+          <h3>The Weekly Pivot</h3>
+          <p>A short note from Carlton each week with one idea, one prompt and one small step to keep your year moving.</p>
+          <a href="#join" class="way-link">Get on the list <span class="arrow" aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="way reveal" style="--d:.16s">
+          <span class="way-status">Coming soon</span>
+          <div class="way-step">Step 03</div>
+          <h3>The Pivot Community</h3>
+          <p>Do the work alongside other people who are done starting over, with shared check-ins through the year.</p>
+          <a href="#join" class="way-link">Get on the list <span class="arrow" aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="way wide reveal" style="--d:.1s">
+          <span class="way-status">Coming soon</span>
+          <div class="way-step">For teams and events</div>
+          <h3>Workshops &amp; Speaking</h3>
+          <p>Carlton brings the Quiet Power framework to teams, classrooms and stages, for groups who want to finish what they start together.</p>
+          <a href="#join" class="way-link">Ask about a booking <span class="arrow" aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- START HERE: THE PLANNER -->
+  <section class="section start" id="start" aria-labelledby="start-title">
+    <div class="container">
+      <div class="start-grid">
+        <div class="start-visual reveal">
+          <div class="book" id="book">
+            <img src="public/bookCover.jpg" alt="Pivotal365: The Quiet Power Lifestyle Planner by Carlton Chapman" width="1159" height="1500" loading="lazy" />
+            <div class="book-glare" aria-hidden="true"></div>
+            <div class="book-floor" aria-hidden="true"></div>
+          </div>
+          <div class="hero-badge" aria-hidden="true"><div><b>163</b><small>Pages of<br/>follow-through</small></div></div>
+        </div>
+
+        <div class="start-text">
+          <p class="eyebrow reveal">Step 01 · Start Here</p>
+          <h2 id="start-title" class="reveal">The planner is where <span class="gold">your pivot begins</span></h2>
+          <p class="reveal">The Quiet Power Lifestyle Planner is a 163-page hybrid: part lifestyle planner, part psychological coaching system. It begins before the first date box, with identity, and it doesn't let you off the hook when things get hard.</p>
+          <p class="reveal">Embedded throughout the planning year are 10 Mini Chapters and 6 Vignettes: written interventions that meet you in the exact moments most people abandon everything.</p>
+
+          <div class="stats reveal">
+            <div class="stat"><b data-count="163">163</b><span>Pages</span></div>
+            <div class="stat"><b data-count="10">10</b><span>Mini Chapters</span></div>
+            <div class="stat"><b data-count="6">6</b><span>Vignettes</span></div>
+            <div class="stat"><b data-count="365">365</b><span>Days</span></div>
+          </div>
+
+          <a href="#get-the-planner" class="btn btn-gold btn-lg reveal">Choose Your Format <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <div class="sub-head center">
+        <p class="eyebrow reveal">Inside the Planner</p>
+        <h3 class="reveal"><span class="gold">163 pages</span> of quiet execution</h3>
+        <p class="reveal">Every section was designed with one question in mind: what does the person about to quit actually need right now?</p>
+      </div>
+
+      <div class="bento" id="inside">
         <article class="tile wide reveal">
           <span class="tile-num" aria-hidden="true">01</span>
           <div class="tile-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="10" rx="1.5"/><rect x="13" y="3" width="8" height="6" rx="1.5"/><rect x="13" y="11" width="8" height="10" rx="1.5"/><rect x="3" y="15" width="8" height="6" rx="1.5"/></svg></div>
-          <h3>Vision Board Collage</h3>
+          <h4 class="tile-title">Vision Board Collage</h4>
           <p>A two-page spread that translates intention into a visual anchor: the through-line you return to when new ideas try to hijack your focus.</p>
           <span class="tile-tag">Vision Section</span>
         </article>
@@ -1075,7 +1332,7 @@
         <article class="tile reveal" style="--d:.08s">
           <span class="tile-num" aria-hidden="true">02</span>
           <div class="tile-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 9.2c-.6-.8-1.7-1.2-3-1.2-1.7 0-3 .8-3 2s1.3 1.7 3 2 3 .8 3 2-1.3 2-3 2c-1.3 0-2.4-.4-3-1.2M12 6v2M12 16v2"/></svg></div>
-          <h3>Financial Clarity &amp; Freedom</h3>
+          <h4 class="tile-title">Financial Clarity &amp; Freedom</h4>
           <p>Know Your Money. Build a Financial Vision. The Budget Framework. Track &amp; Adjust. The missing section in every other lifestyle planner, connecting ambition to material reality.</p>
           <span class="tile-tag">Section 2</span>
         </article>
@@ -1083,7 +1340,7 @@
         <article class="tile reveal">
           <span class="tile-num" aria-hidden="true">03</span>
           <div class="tile-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/><path d="M9 8h7M9 12h5"/></svg></div>
-          <h3>10 Mini Chapters</h3>
+          <h4 class="tile-title">10 Mini Chapters</h4>
           <p>Psychological coaching embedded throughout the planning year, at exactly the moments motivation dies. Discipline Is Self-Respect. Protect Your Energy. Quiet Consistency Beats Loud Intensity.</p>
           <span class="tile-tag">Throughout</span>
         </article>
@@ -1091,7 +1348,7 @@
         <article class="tile reveal" style="--d:.08s">
           <span class="tile-num" aria-hidden="true">04</span>
           <div class="tile-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></div>
-          <h3>6 Personal Vignettes</h3>
+          <h4 class="tile-title">6 Personal Vignettes</h4>
           <p>First-person narratives that normalize the emotional cost of becoming: walking away from toxicity, rebuilding self-trust, and refusing to stop when you're close.</p>
           <span class="tile-tag">Throughout</span>
         </article>
@@ -1099,7 +1356,7 @@
         <article class="tile reveal" style="--d:.16s">
           <span class="tile-num" aria-hidden="true">05</span>
           <div class="tile-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M7 13h2M11 13h2M15 13h2M7 17h2M11 17h2"/></svg></div>
-          <h3>Full Planning Structure</h3>
+          <h4 class="tile-title">Full Planning Structure</h4>
           <p>Each tier designed to build on the last, creating a cadence that doesn't require willpower to maintain.</p>
           <div class="tier" aria-label="Yearly, Quarterly, Monthly, Weekly, Daily"><span>Yearly</span><span>Quarterly</span><span>Monthly</span><span>Weekly</span><span>Daily</span></div>
           <span class="tile-tag">Sections 3–7</span>
@@ -1108,48 +1365,45 @@
         <article class="tile full reveal">
           <span class="tile-num" aria-hidden="true">06</span>
           <div class="tile-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg></div>
-          <h3>Who You Became</h3>
-          <p>The end-of-year reflection that closes the loop. Not a summary of what you did: a reckoning with who you chose to become in the process of doing it.</p>
+          <h4 class="tile-title">Who You Became</h4>
+          <p>The end-of-year reflection that closes the loop: a reckoning with who you chose to become in the process of doing the work, beyond a list of what you did.</p>
           <span class="tile-tag">Section 8</span>
         </article>
       </div>
-    </div>
-  </section>
 
-  <!-- VIGNETTES -->
-  <section class="section vignettes" aria-labelledby="vig-title">
-    <div class="container vig-grid">
-      <div class="vig-text">
-        <p class="eyebrow reveal">Mentorship in a Planner</p>
-        <h2 id="vig-title" class="reveal">Built for the moments you <span class="gold">normally quit</span></h2>
-        <p class="reveal">Standard planners leave you alone at the hardest point: the 60% mark, when the initial excitement has faded and the finish line is still invisible.</p>
-        <p class="reveal">Pivotal365 doesn't. The Vignettes and Mini Chapters are a coach in the margins, written for the specific emotional realities of ambition: comparison, self-doubt, toxic environments, and the perfectionism that kills projects at 80%.</p>
+      <div class="vig-grid vig-block">
+        <div class="vig-text">
+          <p class="eyebrow reveal">Mentorship in a Planner</p>
+          <h3 class="vig-title reveal">Built for the moments you <span class="gold">normally quit</span></h3>
+          <p class="reveal">Standard planners leave you alone at the hardest point: the 60% mark, when the initial excitement has faded and the finish line is still invisible.</p>
+          <p class="reveal">Pivotal365 stays with you. The Vignettes and Mini Chapters are a coach in the margins, written for the specific emotional realities of ambition: comparison, self-doubt, toxic environments, and the perfectionism that kills projects at 80%.</p>
 
-        <ul class="vig-list reveal">
-          <li><span class="num">V1</span> Losing Myself in People-Pleasing</li>
-          <li><span class="num">V2</span> Choosing Myself</li>
-          <li><span class="num">V3</span> Walking Away From Toxicity</li>
-          <li><span class="num">V4</span> Rebuilding Self-Trust</li>
-          <li><span class="num">V5</span> You Did Not Come This Far to Only Come This Far</li>
-        </ul>
-      </div>
+          <ul class="vig-list reveal">
+            <li><span class="num">V1</span> Losing Myself in People-Pleasing</li>
+            <li><span class="num">V2</span> Choosing Myself</li>
+            <li><span class="num">V3</span> Walking Away From Toxicity</li>
+            <li><span class="num">V4</span> Rebuilding Self-Trust</li>
+            <li><span class="num">V5</span> You Did Not Come This Far to Only Come This Far</li>
+          </ul>
+        </div>
 
-      <div class="vig-cards">
-        <article class="vig-card reveal">
-          <div class="vig-label">Mini Chapter 2</div>
-          <h4>Discipline Is Self-Respect</h4>
-          <p>Reframing discipline from punishment to the highest form of honoring what you said mattered. Every time you show up is a vote for the future version of you.</p>
-        </article>
-        <article class="vig-card reveal" style="--d:.1s">
-          <div class="vig-label">Mini Chapter 8</div>
-          <h4>Growth Requires Subtraction</h4>
-          <p>The most powerful word in your vocabulary is no. Positioning saying no not as retreat but as the strategic sophistication of someone who knows their lane.</p>
-        </article>
-        <article class="vig-card reveal" style="--d:.2s">
-          <div class="vig-label">Mini Chapter 10</div>
-          <h4>Quiet Consistency Beats Loud Intensity</h4>
-          <p>The quiet ones finish first. Unremarkable daily action compounds into transformation that heroic but unsustainable sprints never could.</p>
-        </article>
+        <div class="vig-cards">
+          <article class="vig-card reveal">
+            <div class="vig-label">Mini Chapter 2</div>
+            <h4>Discipline Is Self-Respect</h4>
+            <p>Reframing discipline from punishment to the highest form of honoring what you said mattered. Every time you show up is a vote for the future version of you.</p>
+          </article>
+          <article class="vig-card reveal" style="--d:.1s">
+            <div class="vig-label">Mini Chapter 8</div>
+            <h4>Growth Requires Subtraction</h4>
+            <p>The most powerful word in your vocabulary is no. Saying it is the strategic sophistication of someone who knows their lane.</p>
+          </article>
+          <article class="vig-card reveal" style="--d:.2s">
+            <div class="vig-label">Mini Chapter 10</div>
+            <h4>Quiet Consistency Beats Loud Intensity</h4>
+            <p>The quiet ones finish first. Unremarkable daily action compounds into transformation that heroic but unsustainable sprints never could.</p>
+          </article>
+        </div>
       </div>
     </div>
   </section>
@@ -1213,24 +1467,45 @@
     </div>
   </section>
 
-  <!-- AUTHOR -->
+  <!-- FOUNDER -->
   <section class="section author" id="author" aria-labelledby="author-title">
     <div class="container author-grid">
       <div class="author-photo reveal">
-        <img src="public/ChapmanHSW-2.jpeg" alt="Carlton Chapman, author of Pivotal365" width="980" height="1466" loading="lazy" />
-        <div class="author-caption"><b>Carlton Chapman</b>Author, Pivotal365</div>
+        <img src="public/ChapmanHSW-2.jpeg" alt="Carlton Chapman, founder of Pivotal365" width="980" height="1466" loading="lazy" />
+        <div class="author-caption"><b>Carlton Chapman</b>Founder &amp; Author, Pivotal365</div>
       </div>
 
       <div class="author-text">
-        <p class="eyebrow reveal">About the Author</p>
-        <h2 id="author-title" class="reveal">Carlton Chapman wrote this for <span class="serif-i">the person he used to be.</span></h2>
+        <p class="eyebrow reveal">The Founder</p>
+        <h2 id="author-title" class="reveal">Carlton Chapman built Pivotal365 for <span class="serif-i">the person he used to be.</span></h2>
         <p class="reveal">Pivotal365 was not designed from the outside looking in. It was built from inside the specific frustration of having too many ideas, too much potential, and a graveyard of things that should have been finished.</p>
-        <p class="reveal">The Quiet Power philosophy (Identity first, Vision curation, Structure as elegance, Reflection as refinement) is not theory. It is the architecture that closed the loops.</p>
-        <p class="reveal">Carlton's conviction is simple: the chronically ambitious don't have a discipline problem. They have a framework problem. Pivotal365 is the answer to that problem, designed for the way the quietly unstoppable actually work.</p>
+        <p class="reveal">The Quiet Power philosophy (Identity first, Vision curation, Structure as elegance, Reflection as refinement) is the architecture that closed those loops in his own life.</p>
+        <p class="reveal">Carlton's conviction: the chronically ambitious don't have a discipline problem. They have a framework problem. Pivotal365 is his answer, designed for the way the quietly unstoppable actually work.</p>
 
         <div class="author-callout reveal">
           <p>"You did not come this far to only come this far. The year you finally finish what you started begins on the next page."</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOIN -->
+  <section class="section join" id="join" aria-labelledby="join-title">
+    <div class="container">
+      <div class="join-card reveal">
+        <div>
+          <p class="eyebrow">Join the Movement</p>
+          <h2 id="join-title">Make this your <span class="gold">pivot year</span></h2>
+          <p>Get on the Pivotal365 list to hear first when The Weekly Pivot, the community and workshops with Carlton open up.</p>
+        </div>
+        <form class="join-form" id="join-form" action="" method="post" data-endpoint="" novalidate>
+          <label for="join-name">First name</label>
+          <input id="join-name" name="first_name" type="text" autocomplete="given-name" placeholder="Your first name" />
+          <label for="join-email">Email address</label>
+          <input id="join-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+          <button type="submit" class="btn btn-gold btn-lg">Join the Movement <span class="arrow" aria-hidden="true">→</span></button>
+          <p class="join-note" id="join-note" role="status" aria-live="polite"></p>
+        </form>
       </div>
     </div>
   </section>
@@ -1241,11 +1516,11 @@
     <div class="cta-inner">
       <p class="eyebrow reveal">The Year Starts Now</p>
       <h2 id="cta-title" class="reveal">The year you <span class="gold">finish</span> what you started.</h2>
-      <p class="reveal">One planner. One year. The architecture, the mentorship, and the system you needed all along. Start where you are.</p>
+      <p class="reveal">One year. One quiet pivot. Start with the planner today, and join the movement for what comes next.</p>
 
       <div class="cta-buttons reveal">
-        <a href="https://www.amazon.com/dp/B0GX2TFF6J" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-lg">Get Pivotal365 on Amazon <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens Amazon in new tab)</span></a>
-        <a href="#framework" class="btn btn-line btn-lg">See the Framework</a>
+        <a href="https://www.amazon.com/dp/B0GX2TFF6J" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-lg">Get the Planner on Amazon <span class="arrow" aria-hidden="true">→</span><span class="sr-only"> (opens Amazon in new tab)</span></a>
+        <a href="#join" class="btn btn-line btn-lg">Join the Movement</a>
       </div>
 
       <div class="cta-formats reveal">
@@ -1268,24 +1543,26 @@
         </div>
         <nav aria-label="Footer navigation">
           <ul class="footer-links">
-            <li><a href="#framework">Framework</a></li>
-            <li><a href="#inside">Inside the Planner</a></li>
+            <li><a href="#philosophy">Philosophy</a></li>
+            <li><a href="#framework">The Path</a></li>
+            <li><a href="#start">The Planner</a></li>
             <li><a href="#author">Carlton Chapman</a></li>
+            <li><a href="#join">Join</a></li>
             <li><a href="https://www.amazon.com/dp/B0GX2TFF6J" target="_blank" rel="noopener noreferrer">Buy on Amazon<span class="sr-only"> (opens in new tab)</span></a></li>
           </ul>
         </nav>
       </div>
       <div class="footer-copy">
         <span>© 2026 Pivotal365 · Carlton Chapman</span>
-        <em>Quiet Power Lifestyle Planner</em>
+        <em>Master the art of the quiet pivot</em>
       </div>
     </div>
   </footer>
 
   <!-- MOBILE STICKY CTA -->
   <div class="sticky-cta" id="sticky-cta">
-    <div class="sticky-cta-text"><b>Pivotal365</b>From $9.99 on Amazon</div>
-    <a href="#get-the-planner" class="btn btn-gold">Get the Planner</a>
+    <div class="sticky-cta-text"><b>Pivotal365</b>Start with the planner</div>
+    <a href="#start-your-pivot" class="btn btn-gold">Start Your Pivot</a>
   </div>
 
   <script>
@@ -1370,8 +1647,9 @@
     /* Book tilt + glare follows the pointer */
     var book = document.getElementById('book');
     var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    var bookStage = book ? book.closest('section') : null;
     if (book && finePointer && !reduce) {
-      hero.addEventListener('pointermove', function (e) {
+      bookStage.addEventListener('pointermove', function (e) {
         var b = book.getBoundingClientRect();
         var x = (e.clientX - (b.left + b.width / 2)) / window.innerWidth;
         var y = (e.clientY - (b.top + b.height / 2)) / window.innerHeight;
@@ -1379,7 +1657,43 @@
         book.style.setProperty('--gx', (50 + x * 120).toFixed(1) + '%');
         book.style.setProperty('--gy', (40 + y * 120).toFixed(1) + '%');
       });
-      hero.addEventListener('pointerleave', function () { book.style.transform = ''; });
+      bookStage.addEventListener('pointerleave', function () { book.style.transform = ''; });
+    }
+
+    /* Hero dial: light the five stages in turn */
+    var nodes = document.querySelectorAll('#dial .dial-node');
+    if (nodes.length && !reduce) {
+      var cur = 0;
+      setInterval(function () {
+        cur = (cur + 1) % (nodes.length + 1);
+        nodes.forEach(function (n, i) { n.classList.toggle('on', cur === nodes.length ? true : i <= cur); });
+      }, 1400);
+    } else {
+      nodes.forEach(function (n) { n.classList.add('on'); });
+    }
+
+    /* Join form: posts to data-endpoint once an email provider is connected */
+    var form = document.getElementById('join-form');
+    var note = document.getElementById('join-note');
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = form.querySelector('[name=email]');
+        if (!email.value || !email.checkValidity()) {
+          note.className = 'join-note'; note.textContent = 'Please enter a valid email address.'; email.focus(); return;
+        }
+        var endpoint = form.getAttribute('data-endpoint');
+        if (!endpoint) {
+          note.className = 'join-note'; note.textContent = 'Sign-ups open soon. Until then, start with the planner.'; return;
+        }
+        note.className = 'join-note'; note.textContent = 'Sending...';
+        fetch(endpoint, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+          .then(function (r) {
+            if (!r.ok) throw new Error();
+            note.className = 'join-note ok'; note.textContent = "You're on the list. Welcome to your pivot year."; form.reset();
+          })
+          .catch(function () { note.className = 'join-note'; note.textContent = 'Something went wrong. Please try again.'; });
+      });
     }
 
     /* Bento tiles: glow follows cursor */
