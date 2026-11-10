@@ -97,7 +97,7 @@ export default function Home() {
                   <div>
                     <div className="way-step">Step 01 · Start here</div>
                     <h3>The Quiet Power Lifestyle Planner</h3>
-                    <p>163 pages that take you through all five stages over a full year, with coaching written into the margins for the moments you&apos;d normally quit.</p>
+                    <p>A full-year planner that takes you through all five stages, with coaching written into the margins for the moments you&apos;d normally quit.</p>
                     <a href="#start" className="way-link">Explore the planner <span className="arrow" aria-hidden="true">→</span></a>
                   </div>
                 </div>
@@ -123,10 +123,10 @@ export default function Home() {
               <div className="start-text">
                 <p className="eyebrow reveal">Step 01 · Start Here</p>
                 <h2 id="start-title" className="reveal">The planner is where <span className="gold">your pivot begins</span></h2>
-                <p className="reveal">The Quiet Power Lifestyle Planner is a 163-page hybrid: part lifestyle planner, part psychological coaching system. It begins before the first date box, with identity, and it doesn&apos;t let you off the hook when things get hard.</p>
+                <p className="reveal">The Quiet Power Lifestyle Planner is a hybrid: part lifestyle planner, part psychological coaching system. It begins before the first date box, with identity, and it doesn&apos;t let you off the hook when things get hard.</p>
                 <p className="reveal">Embedded throughout the planning year are 10 Mini Chapters and 6 Vignettes: written interventions that meet you in the exact moments most people abandon everything.</p>
                 <div className="stats reveal">
-                  {[["163", "Pages"], ["10", "Mini Chapters"], ["6", "Vignettes"], ["365", "Days"]].map(([n, l]) => (
+                  {[["5", "Stages"], ["10", "Mini Chapters"], ["6", "Vignettes"], ["365", "Days"]].map(([n, l]) => (
                     <div className="stat" key={l}><b data-count={n}>{n}</b><span>{l}</span></div>
                   ))}
                 </div>
@@ -136,7 +136,7 @@ export default function Home() {
 
             <div className="sub-head center" id="inside">
               <p className="eyebrow reveal">Inside the Planner</p>
-              <h3 className="reveal"><span className="gold">163 pages</span> of quiet execution</h3>
+              <h3 className="reveal">A full year of <span className="gold">quiet execution</span></h3>
               <p className="reveal">Every section was designed with one question in mind: what does the person about to quit actually need right now?</p>
             </div>
 
@@ -216,7 +216,7 @@ export default function Home() {
             </div>
             <div className="author-text">
               <p className="eyebrow reveal">The Founder</p>
-              <h2 id="author-title" className="reveal">Carlton Chapman built Pivotal365 for <span className="serif-i">the person he used to be.</span></h2>
+              <h2 id="author-title" className="reveal">Carlton Chapman built Pivotal365 for <span className="accent">the person he used to be.</span></h2>
               <p className="reveal">Pivotal365 was not designed from the outside looking in. It was built from inside the specific frustration of having too many ideas, too much potential, and a graveyard of things that should have been finished.</p>
               <p className="reveal">The Quiet Power philosophy (Identity first, Vision curation, Structure as elegance, Reflection as refinement) is the architecture that closed those loops in his own life.</p>
               <p className="reveal">Carlton&apos;s conviction: the chronically ambitious don&apos;t have a discipline problem. They have a framework problem. Pivotal365 is his answer, designed for the way the quietly unstoppable actually work.</p>

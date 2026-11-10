@@ -59,9 +59,9 @@ export default function Hero() {
         <motion.div className="hero-text" style={{ y: textY, opacity: textOpacity }}>
           <p className="eyebrow intro" style={{ "--i": 0 } as React.CSSProperties}>Pivotal365 · Quiet Power</p>
           <h1 id="hero-title">
-            <span className="line intro" style={{ "--i": 1 } as React.CSSProperties}><span className="serif-i">Master</span> the art</span>
-            <span className="line intro" style={{ "--i": 2 } as React.CSSProperties}>of the <span className="gold shimmer">quiet</span></span>
-            <span className="line gold intro" style={{ "--i": 3 } as React.CSSProperties}>pivot.</span>
+            <span className="line intro" style={{ "--i": 1 } as React.CSSProperties}>Master the art</span>
+            <span className="line intro" style={{ "--i": 2 } as React.CSSProperties}>of the</span>
+            <span className="line intro" style={{ "--i": 3 } as React.CSSProperties}><span className="gold shimmer">quiet pivot.</span></span>
           </h1>
           <p className="hero-sub intro" style={{ "--i": 4 } as React.CSSProperties}>
             Pivotal365 is a year-long shift toward the person you keep saying you&apos;ll become. You start with who you are,

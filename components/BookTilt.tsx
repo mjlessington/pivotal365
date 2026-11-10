@@ -32,7 +32,7 @@ export default function BookTilt() {
         <motion.div className="book-glare" aria-hidden="true" style={{ background: glare }} />
         <div className="book-floor" aria-hidden="true" />
       </motion.div>
-      <div className="hero-badge" aria-hidden="true"><div><b>163</b><small>Pages of<br />follow-through</small></div></div>
+      <div className="hero-badge" aria-hidden="true"><div><b>365</b><small>Days of<br />follow-through</small></div></div>
     </div>
   );
 }

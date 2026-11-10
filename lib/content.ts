@@ -93,7 +93,7 @@ export const tiles: { title: string; body: string; tag: string; icon: TileIcon; 
   { title: "Financial Clarity & Freedom", body: "Know Your Money. Build a Financial Vision. The Budget Framework. Track & Adjust. The missing section in every other lifestyle planner, connecting ambition to material reality.", tag: "Section 2", icon: "coin" },
   { title: "10 Mini Chapters", body: "Psychological coaching embedded throughout the planning year, at exactly the moments motivation dies. Discipline Is Self-Respect. Protect Your Energy. Quiet Consistency Beats Loud Intensity.", tag: "Throughout", icon: "book" },
   { title: "6 Personal Vignettes", body: "First-person narratives that normalize the emotional cost of becoming: walking away from toxicity, rebuilding self-trust, and refusing to stop when you're close.", tag: "Throughout", icon: "chat" },
-  { title: "Full Planning Structure", body: "Each tier designed to build on the last, creating a cadence that doesn't require willpower to maintain.", tag: "Sections 3–7", icon: "calendar", tiers: ["Yearly", "Quarterly", "Monthly", "Weekly", "Daily"] },
+  { title: "Full Planning Structure", body: "Each tier designed to build on the last, creating a cadence that doesn't require willpower to maintain.", tag: "Sections 3 to 7", icon: "calendar", tiers: ["Yearly", "Quarterly", "Monthly", "Weekly", "Daily"] },
   { title: "Who You Became", body: "The end-of-year reflection that closes the loop: a reckoning with who you chose to become in the process of doing the work, beyond a list of what you did.", tag: "Section 8", icon: "star", size: "full" },
 ];
 
@@ -120,7 +120,7 @@ export const formats = [
     cents: ".99",
     desc: "The lowest barrier to entry. Start your quiet pivot today: no waiting, no shipping.",
     cta: "Get the Kindle Edition",
-    features: ["Full 163-page digital experience", "Read on Kindle, phone, or tablet", "Instant delivery", "Word Wise & Enhanced Typesetting enabled"],
+    features: ["The complete planner, in digital form", "Read on Kindle, phone, or tablet", "Instant delivery", "Word Wise & Enhanced Typesetting enabled"],
   },
   {
     format: "Print",
@@ -130,7 +130,7 @@ export const formats = [
     cents: ".99",
     desc: "The planner as it was meant to be used: pen in hand, pages turned. The ritual is part of the work.",
     cta: "Get the Paperback",
-    features: ["Full 163-page printed planner", "Write directly in the pages", "Durable matte cover finish", "Ships from Amazon"],
+    features: ["The complete planner, in print", "Write directly in the pages", "Durable matte cover finish", "Ships from Amazon"],
     featured: true,
   },
   {
@@ -141,7 +141,7 @@ export const formats = [
     cents: ".99",
     desc: "For the person who means it. A premium, durable edition worthy of a year of serious work, and the most intentional gift you can give.",
     cta: "Get the Hardcover",
-    features: ["Full 163-page premium hardcover", "Durable case-bound construction", "Gift-ready presentation", "Ships from Amazon"],
+    features: ["The complete planner, in premium hardcover", "Durable case-bound construction", "Gift-ready presentation", "Ships from Amazon"],
   },
 ];
 
@@ -150,10 +150,9 @@ export const bookJsonLd = {
   "@type": "Book",
   name: "Pivotal365: The Quiet Power Lifestyle Planner",
   description:
-    "A 163-page full-year lifestyle planner and psychological coaching system built around five sequential stages (Identity, Vision, Structure, Adjustment, and Reflection), designed for the chronically ambitious who are done starting over.",
+    "A full-year lifestyle planner and psychological coaching system built around five sequential stages (Identity, Vision, Structure, Adjustment, and Reflection), designed for the chronically ambitious who are done starting over.",
   author: { "@type": "Person", name: "Carlton Chapman" },
   publisher: { "@type": "Person", name: "Carlton Chapman" },
-  numberOfPages: 163,
   inLanguage: "en",
   genre: ["Self-Help", "Productivity", "Personal Development"],
   offers: formats.map((f) => ({
